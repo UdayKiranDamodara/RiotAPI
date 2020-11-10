@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/RIOTAPI/static/css/main.9480e152.chunk.css",
+    "main.js": "/RIOTAPI/static/js/main.cdfd26e0.chunk.js",
+    "main.js.map": "/RIOTAPI/static/js/main.cdfd26e0.chunk.js.map",
+    "runtime-main.js": "/RIOTAPI/static/js/runtime-main.abab4e0d.js",
+    "runtime-main.js.map": "/RIOTAPI/static/js/runtime-main.abab4e0d.js.map",
+    "static/js/2.6385c032.chunk.js": "/RIOTAPI/static/js/2.6385c032.chunk.js",
+    "static/js/2.6385c032.chunk.js.map": "/RIOTAPI/static/js/2.6385c032.chunk.js.map",
+    "index.html": "/RIOTAPI/index.html",
+    "precache-manifest.82d1929a3073d63f65692d4d5a107ac9.js": "/RIOTAPI/precache-manifest.82d1929a3073d63f65692d4d5a107ac9.js",
+    "service-worker.js": "/RIOTAPI/service-worker.js",
+    "static/css/main.9480e152.chunk.css.map": "/RIOTAPI/static/css/main.9480e152.chunk.css.map",
+    "static/js/2.6385c032.chunk.js.LICENSE.txt": "/RIOTAPI/static/js/2.6385c032.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.abab4e0d.js",
+    "static/js/2.6385c032.chunk.js",
+    "static/css/main.9480e152.chunk.css",
+    "static/js/main.cdfd26e0.chunk.js"
+  ]
+}
