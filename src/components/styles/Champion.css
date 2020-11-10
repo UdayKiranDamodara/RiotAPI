@@ -1,0 +1,70 @@
+/* LEVEL-1 :- NAME, TITLE, LORE, LOADSCREEN IMAGE */
+
+.level-1-container{
+    border: 2px dashed black;
+    width: 80%;
+    padding: 20px 0;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.level-1-item {
+    margin: 0px 5%;
+}
+
+.load-screen-image img{
+    width: auto;
+    height: 280px;
+}
+
+.name-lore {
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+}
+
+/* LEVEL-2 - STATS */
+.level-2-container{
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+    border: 2px dashed black;
+    padding: 20px 0;
+}
+
+.stats-container {
+    text-align: left;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+li{
+    list-style-type: none;
+}
+
+/* LEVEL-3 - ABILITIES */
+.level-3-container{
+    margin: 20px auto;
+    width: 80%;
+    border: 2px dashed black;
+    padding: 20px 0px;
+}
+
+.ability {
+    margin: 10px 10px;
+    border: 2px dotted black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ability-text {
+    margin: 10px 10px;
+}
+
+.ability-image {
+    margin: 10px 10px;
+}
