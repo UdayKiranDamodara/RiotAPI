@@ -14,11 +14,11 @@ const App = () => {
             <Router>
                 <Nav />
                 <Switch>
-                    <Route path='/League/Champions' exact component={ChampionList} />
-                    <Route path='/League/Champions/:id' exact component={Champion} />
-                    <Route path='/League/Summoners' exact component={Summoners} />
-                    <Route path='/League/Summoners/:id' component={Summoners} />
-                    <Route path='/League/' component={Home} />
+                    <Route path='/Champions' exact component={ChampionList} />
+                    <Route path='/Champions/:id' exact component={Champion} />
+                    <Route path='/Summoners' exact component={Summoners} />
+                    <Route path='/Summoners/:id' component={Summoners} />
+                    <Route path='/' component={Home} />
                 </Switch>            
             </Router>
         </ThemeContextProvider>

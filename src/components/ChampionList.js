@@ -12,7 +12,7 @@ const ChampionList = () => {
     const [inputValue, setInputValue] = useState('')
 
     useEffect(() => {
-        fetch('http://ddragon.leagueoflegends.com/cdn/10.22.1/data/en_US/champion.json')
+        fetch('https://ddragon.leagueoflegends.com/cdn/10.22.1/data/en_US/champion.json')
         .then(res => res.json())
         .then(data => {
             console.log('not lis',Object.keys(data.data))
@@ -48,8 +48,8 @@ const ChampionList = () => {
                             <Link className='champlist-item'
                                 style={{ background: theme.ui, color: theme.syntax }}
                                 key={`${champion}`}
-                                to={`/League/Champions/${champion}`}>
-                                    <img src={`http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/${champion}.png`}></img>
+                                to={`/Champions/${champion}`}>
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/${champion}.png`}></img>
                                     <h3>{champion}</h3>
                             </Link>
                         )
