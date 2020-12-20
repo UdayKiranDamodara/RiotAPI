@@ -1,5 +1,6 @@
 {
   "name": "lol_ddragon",
+  "proxy": "https://euw1.api.riotgames.com/",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://udaykirandamodara.github.io/RiotAPI/",
