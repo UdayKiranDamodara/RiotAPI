@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react'
 
+import GameData from './GameData'
+
 const Summoners = () => {
 
-    const [key, setKey] = useState('RGAPI-f5eeff12-9e0b-49a7-a98f-09d34723e5bc')
+    const [key, setKey] = useState('RGAPI-85d4b894-bf52-4c77-92e7-11eda038c39c')
     const [summonerName, setSummonerName] = useState('finalbosszeref')
 
     const [fetchData, setFetchData] = useState('')
+    const [matches, setMatches] = useState([''])
 
 
     useEffect(()=>{
         fetchMatchHistory()
     }, [fetchData])
+
+    useEffect(()=>{
+        console.log(matches)
+    }, [matches])
 
     const fetchSummoner = async () => {
         console.log(key, summonerName)
@@ -25,7 +32,8 @@ const Summoners = () => {
     const fetchMatchHistory = async () => {
         const rawMatchHistory = await fetch(`/lol/match/v4/matchlists/by-account/${fetchData.accountId}?api_key=${key}`)
         const parsedMatchHistory = await rawMatchHistory.json()
-        console.log('parsed Match History', parsedMatchHistory)
+        console.log('parsed Match History', parsedMatchHistory.matches)
+        setMatches(parsedMatchHistory.matches)
     }
 
     return(
@@ -44,7 +52,17 @@ const Summoners = () => {
                 <button onClick={fetchSummoner}>Submit</button>
             </div>
             <div className='summoner-data'>
-                {fetchData.accountId}
+                <div className='info'>{fetchData.accountId}</div>
+                {(matches !== undefined ) ?
+                    // matches.map(match => {
+                    // return (
+                    //     <GameData gameId={match.gameId} summonerName={summonerName}></GameData>
+                    // )
+                    // })
+                    <GameData gameId={matches[0].gameId} summonerName={summonerName}></GameData>
+                    : <div></div>
+                }
+                
             </div>
         </div>
     )
