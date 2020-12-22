@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/RiotAPI/static/css/main.46cb5ed8.chunk.css",
-    "main.js": "/RiotAPI/static/js/main.830476a4.chunk.js",
-    "main.js.map": "/RiotAPI/static/js/main.830476a4.chunk.js.map",
+    "main.css": "/RiotAPI/static/css/main.b5c6adeb.chunk.css",
+    "main.js": "/RiotAPI/static/js/main.c86113f3.chunk.js",
+    "main.js.map": "/RiotAPI/static/js/main.c86113f3.chunk.js.map",
     "runtime-main.js": "/RiotAPI/static/js/runtime-main.236f0bc9.js",
     "runtime-main.js.map": "/RiotAPI/static/js/runtime-main.236f0bc9.js.map",
-    "static/js/2.ee8aeef0.chunk.js": "/RiotAPI/static/js/2.ee8aeef0.chunk.js",
-    "static/js/2.ee8aeef0.chunk.js.map": "/RiotAPI/static/js/2.ee8aeef0.chunk.js.map",
+    "static/js/2.1f164a6e.chunk.js": "/RiotAPI/static/js/2.1f164a6e.chunk.js",
+    "static/js/2.1f164a6e.chunk.js.map": "/RiotAPI/static/js/2.1f164a6e.chunk.js.map",
     "index.html": "/RiotAPI/index.html",
-    "precache-manifest.5af83a107f0e6f746ccdc03840a8fd71.js": "/RiotAPI/precache-manifest.5af83a107f0e6f746ccdc03840a8fd71.js",
+    "precache-manifest.119c332c811480d820a6e5847fb38a21.js": "/RiotAPI/precache-manifest.119c332c811480d820a6e5847fb38a21.js",
     "service-worker.js": "/RiotAPI/service-worker.js",
-    "static/css/main.46cb5ed8.chunk.css.map": "/RiotAPI/static/css/main.46cb5ed8.chunk.css.map",
-    "static/js/2.ee8aeef0.chunk.js.LICENSE.txt": "/RiotAPI/static/js/2.ee8aeef0.chunk.js.LICENSE.txt"
+    "static/css/main.b5c6adeb.chunk.css.map": "/RiotAPI/static/css/main.b5c6adeb.chunk.css.map",
+    "static/js/2.1f164a6e.chunk.js.LICENSE.txt": "/RiotAPI/static/js/2.1f164a6e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.236f0bc9.js",
-    "static/js/2.ee8aeef0.chunk.js",
-    "static/css/main.46cb5ed8.chunk.css",
-    "static/js/main.830476a4.chunk.js"
+    "static/js/2.1f164a6e.chunk.js",
+    "static/css/main.b5c6adeb.chunk.css",
+    "static/js/main.c86113f3.chunk.js"
   ]
 }
