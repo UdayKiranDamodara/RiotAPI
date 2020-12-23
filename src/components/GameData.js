@@ -44,7 +44,7 @@ const GameData = ({ gameId, summonerName }) => {
     }, [display])
 
     const fetchMatchData = async () => {
-        const rawMatchData = await fetch(`/lol/match/v4/matches/${gameId}?api_key=RGAPI-3f1cdb77-e56c-4eb4-ba26-11e080ee1291`)
+        const rawMatchData = await fetch(`https://cors-anywhere.herokuapp.com/https://euw1.api.riotgames.com/lol/match/v4/matches/${gameId}?api_key=RGAPI-3f1cdb77-e56c-4eb4-ba26-11e080ee1291`)
         const parsedMatchData = await rawMatchData.json()
         console.log("parsed Match Data", parsedMatchData)
         setMatchData(parsedMatchData)
@@ -96,7 +96,7 @@ const GameData = ({ gameId, summonerName }) => {
     }
 
     const getSummonerSpellName = async (id, num) => {
-        const rawData = await fetch('http://ddragon.leagueoflegends.com/cdn/10.25.1/data/en_US/summoner.json')
+        const rawData = await fetch('https://cors-anywhere.herokuapp.com/https://ddragon.leagueoflegends.com/cdn/10.25.1/data/en_US/summoner.json')
         const parsedData = await rawData.json()
         const temp = Object.values(parsedData.data)
         const [temp2] = temp.filter(item => item.key == id)
@@ -127,8 +127,8 @@ const GameData = ({ gameId, summonerName }) => {
                         <div>{display.championName}</div>
                     </div>
                     <div className="summoners">
-                        <img width='40px' height='40px' src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${display.spell1Name}.png`} />
-                        <img width='40px' height='40px' src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${display.spell2Name}.png`} />
+                        <img width='40px' height='40px' src={`https://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${display.spell1Name}.png`} />
+                        <img width='40px' height='40px' src={`https://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${display.spell2Name}.png`} />
                     </div>
                     <div className='info'>
                         <div className="kda">

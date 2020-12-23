@@ -24,7 +24,7 @@ const Summoners = () => {
     const fetchSummoner = async () => {
         console.log(key, summonerName)
         // const rawFetchSummoner = await fetch(`https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${key}`, {mode: 'cors'})
-        const rawFetchSummoner = await fetch(`/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${key}`)
+        const rawFetchSummoner = await fetch(`https://cors-anywhere.herokuapp.com/https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${key}`)
         const parsedSummoner = await rawFetchSummoner.json()
         console.log('fetch response', parsedSummoner)
         setFetchData(parsedSummoner)
@@ -32,7 +32,7 @@ const Summoners = () => {
     }
 
     const fetchMatchHistory = async () => {
-        const rawMatchHistory = await fetch(`/lol/match/v4/matchlists/by-account/${fetchData.accountId}?api_key=${key}`)
+        const rawMatchHistory = await fetch(`https://cors-anywhere.herokuapp.com/https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/${fetchData.accountId}?api_key=${key}`)
         const parsedMatchHistory = await rawMatchHistory.json()
         console.log('parsed Match History', parsedMatchHistory.matches)
         setMatches(parsedMatchHistory.matches)
