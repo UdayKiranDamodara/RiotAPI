@@ -44,9 +44,9 @@ const GameData = ({ gameId, summonerName }) => {
     }, [display])
 
     const fetchMatchData = async () => {
-        const rawMatchData = await fetch(`/lol/match/v4/matches/${gameId}?api_key=RGAPI-85d4b894-bf52-4c77-92e7-11eda038c39c`)
+        const rawMatchData = await fetch(`/lol/match/v4/matches/${gameId}?api_key=RGAPI-3f1cdb77-e56c-4eb4-ba26-11e080ee1291`)
         const parsedMatchData = await rawMatchData.json()
-        //console.log("parsed Match Data", parsedMatchData)
+        console.log("parsed Match Data", parsedMatchData)
         setMatchData(parsedMatchData)
     }
 
@@ -76,47 +76,71 @@ const GameData = ({ gameId, summonerName }) => {
             assists: info.stats.assists,
         }
         getChampionName(info.championId)
-
+        getSummonerSpellName(info.spell1Id, 1)
+        getSummonerSpellName(info.spell2Id, 2)
         setDisplay(temp)
         
     }
 
-    const getChampionName = async (id, data) => {
+    const getChampionName = async (id) => {
         const rawData = await fetch('https://ddragon.leagueoflegends.com/cdn/10.25.1/data/en_US/champion.json')
         const parsedData = await rawData.json()
         const temp = Object.values(parsedData.data)
         const [temp2] = temp.filter(item => item.key == id)
-        console.log(temp2.name)
+        console.log(temp2.id)
         setDisplay((prevState)=>{
             const newState = {...prevState}
-            newState.championName = temp2.name
+            newState.championName = temp2.id
             return newState
         })
+    }
+
+    const getSummonerSpellName = async (id, num) => {
+        const rawData = await fetch('http://ddragon.leagueoflegends.com/cdn/10.25.1/data/en_US/summoner.json')
+        const parsedData = await rawData.json()
+        const temp = Object.values(parsedData.data)
+        const [temp2] = temp.filter(item => item.key == id)
+        console.log('summoner spell Id', temp2.id);
+        (num === 1) ?
+            setDisplay((prevState)=>{
+                const newState = {...prevState}
+                newState.spell1Name = temp2.id
+                return newState
+            }) :
+            setDisplay((prevState)=>{
+                const newState = {...prevState}
+                newState.spell2Name = temp2.id
+                return newState
+            })
 
     }
 
     return (
         <div>
-            <div>{gameId}</div>
-            <div>{summonerName}</div>
-            <div className='game-card'>
-                <div className="champion">
-                    <img src={`https://ddragon.leagueoflegends.com/cdn/10.25.1/img/champion/${display.championName}.png`} />
-                </div>
-                <div className="summoners">
+            {/* <div>{gameId}</div>
+            <div>{summonerName}</div> */}
+            {(display.championName !== '') ?
+                <div className='game-card' style={{backgroundColor: (display.win)?"springgreen":"rgb(197, 67, 35)"}}>
+                    <div className='game-mode'>{matchData.gameMode}</div>
+                    <div className="champion">
+                        <img src={`https://ddragon.leagueoflegends.com/cdn/10.25.1/img/champion/${display.championName}.png`} />
+                        <div>{display.championName}</div>
+                    </div>
+                    <div className="summoners">
+                        <img width='40px' height='40px' src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${display.spell1Name}.png`} />
+                        <img width='40px' height='40px' src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${display.spell2Name}.png`} />
+                    </div>
+                    <div className='info'>
+                        <div className="kda">
+                            <div>{`${display.kills}/${display.deaths}/${display.assists}`}</div>
+                            <div>K/D/A</div>
+                        </div>
+                        <hr />
+                        <div className='duration'>{Math.floor(matchData.gameDuration/60)}m {matchData.gameDuration%60}s</div>    
+                    </div>
 
                 </div>
-                <div className="kda">
-                    {`${display.kills}/${display.deaths}/${display.assists}`}
-                </div>
-                {/* <ul>
-                    <li>{`${display.win}`}</li>
-                    <li>{`${display.kills}`}</li>
-                    <li>{`${display.deaths}`}</li>
-                    <li>{`${display.assists}`}</li>
-                    <li>{`${display.championId}`}</li>
-                </ul> */}
-            </div>
+            : <div></div>}
         </div>
     )
 }

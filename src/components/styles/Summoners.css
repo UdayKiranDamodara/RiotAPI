@@ -1,0 +1,24 @@
+.summoner{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-item {
+    width: 400px;
+    height: 25px;
+    margin-top: 5px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}

@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react'
 
 import GameData from './GameData'
 
+import './styles/Summoners.css'
+
 const Summoners = () => {
 
-    const [key, setKey] = useState('RGAPI-85d4b894-bf52-4c77-92e7-11eda038c39c')
+    const [key, setKey] = useState('RGAPI-3f1cdb77-e56c-4eb4-ba26-11e080ee1291')
     const [summonerName, setSummonerName] = useState('finalbosszeref')
 
     const [fetchData, setFetchData] = useState('')
@@ -40,26 +42,29 @@ const Summoners = () => {
         <div className='summoner'>
             <div className='inputs'>
                 <input type='text'
+                    className='input-item'
                     placeholder='Developer Key'
                     value={`${key}`}
                     onChange={(event)=>{setKey(event.target.value)}}
                 />
                 <input type='text'
+                    className='input-item'
                     placeholder='Summoner Name'
-                    value={`${summonerName}`}
+                    // value={`${summonerName}`}
                     onChange={(event)=>{setSummonerName(event.target.value)}}
                 />
-                <button onClick={fetchSummoner}>Submit</button>
+                <button className='input-item' onClick={fetchSummoner}>Search</button>
             </div>
             <div className='summoner-data'>
-                <div className='info'>{fetchData.accountId}</div>
+                {/* <div className='info'>{fetchData.accountId}</div> */}
                 {(matches !== undefined ) ?
                     // matches.map(match => {
                     // return (
                     //     <GameData gameId={match.gameId} summonerName={summonerName}></GameData>
                     // )
                     // })
-                    <GameData gameId={matches[0].gameId} summonerName={summonerName}></GameData>
+                    //<GameData gameId={matches[0].gameId} summonerName={summonerName}></GameData>
+                    matches.filter((item, id) => id < 10).map(item => <GameData gameId={item.gameId} summonerName={summonerName}></GameData>)
                     : <div></div>
                 }
                 
