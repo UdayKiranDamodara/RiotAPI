@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import './styles/GameData.css'
 
-const GameData = ({ gameId, summonerName }) => {
+const GameData = ({ gameId, summonerName, apiKey }) => {
 
     //const [me, setMe] = useState(gameId)
     useEffect(()=>{
@@ -44,7 +44,7 @@ const GameData = ({ gameId, summonerName }) => {
     }, [display])
 
     const fetchMatchData = async () => {
-        const rawMatchData = await fetch(`https://cors-anywhere.herokuapp.com/https://euw1.api.riotgames.com/lol/match/v4/matches/${gameId}?api_key=RGAPI-3f1cdb77-e56c-4eb4-ba26-11e080ee1291`)
+        const rawMatchData = await fetch(`https://cors-anywhere.herokuapp.com/https://euw1.api.riotgames.com/lol/match/v4/matches/${gameId}?api_key=${apiKey}`)
         const parsedMatchData = await rawMatchData.json()
         console.log("parsed Match Data", parsedMatchData)
         setMatchData(parsedMatchData)

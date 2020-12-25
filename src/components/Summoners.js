@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import GameData from './GameData'
 
@@ -64,7 +65,10 @@ const Summoners = () => {
                     // )
                     // })
                     //<GameData gameId={matches[0].gameId} summonerName={summonerName}></GameData>
-                    matches.filter((item, id) => id < 10).map(item => <GameData gameId={item.gameId} summonerName={summonerName}></GameData>)
+                    matches.filter((item, id) => id < 10).map(
+                        item => 
+                            <GameData gameId={item.gameId} summonerName={summonerName} apiKey={key}></GameData>
+                        )
                     : <div></div>
                 }
                 
