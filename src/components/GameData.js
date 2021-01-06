@@ -123,7 +123,7 @@ const GameData = ({ gameId, summonerName, apiKey }) => {
                 <div className='game-card' style={{backgroundColor: (display.win)?"springgreen":"rgb(197, 67, 35)"}}>
                     <div className='game-mode'>{matchData.gameMode}</div>
                     <div className="champion">
-                        <img src={`https://ddragon.leagueoflegends.com/cdn/10.25.1/img/champion/${display.championName}.png`} />
+                        <img classname='gamecard-champ-image' src={`https://ddragon.leagueoflegends.com/cdn/10.25.1/img/champion/${display.championName}.png`} />
                         <div>{display.championName}</div>
                     </div>
                     <div className="summoners">

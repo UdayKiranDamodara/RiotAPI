@@ -7,7 +7,7 @@ import './styles/Summoners.css'
 
 const Summoners = () => {
 
-    const [key, setKey] = useState('RGAPI-3f1cdb77-e56c-4eb4-ba26-11e080ee1291')
+    const [key, setKey] = useState('')
     const [summonerName, setSummonerName] = useState('finalbosszeref')
 
     const [fetchData, setFetchData] = useState('')
@@ -44,7 +44,7 @@ const Summoners = () => {
             <div className='inputs'>
                 <input type='text'
                     className='input-item'
-                    placeholder='Developer Key'
+                    placeholder='Riot Games Developer Key'
                     value={`${key}`}
                     onChange={(event)=>{setKey(event.target.value)}}
                 />

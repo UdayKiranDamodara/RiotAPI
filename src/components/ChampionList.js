@@ -49,7 +49,7 @@ const ChampionList = () => {
                                 style={{ background: theme.ui, color: theme.syntax }}
                                 key={`${champion}`}
                                 to={`/Champions/${champion}`}>
-                                    <img src={`https://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/${champion}.png`}></img>
+                                    <img height='120px' width='120px' src={`https://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/${champion}.png`}></img>
                                     <h3>{champion}</h3>
                             </Link>
                         )

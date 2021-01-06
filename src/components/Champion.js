@@ -78,7 +78,7 @@ const ChampionList = (props) => {
                     <h3 className='lore'>{lore}</h3>
                 </div>
                 <div className='level-1-item load-screen-image'>
-                    <img alt={`${name}`} src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_0.jpg`} />
+                    <img className='level-1-image' alt={`${name}`} src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_0.jpg`} />
                 </div>
             </div>
             <div className='level-2-container'>
@@ -114,7 +114,7 @@ const ChampionList = (props) => {
                                 <p>{spell.description}</p>
                             </div>
                             <div className='ability-image'>
-                                <img src={`https://ddragon.leagueoflegends.com/cdn/10.22.1/img/spell/${spell.image.full}`}/>
+                                <img width='64px' height='64px' src={`https://ddragon.leagueoflegends.com/cdn/10.22.1/img/spell/${spell.image.full}`}/>
                             </div>
                         </div>
                     )

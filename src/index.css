@@ -1,3 +1,15 @@
 a {
     text-decoration: none;
 }
+
+.pd-top {
+    padding-top: 2rem;
+}
+
+.pd-left {
+    padding-left: 2rem;
+}
+
+.pd-top li {
+    font-size: 1.75rem;
+}

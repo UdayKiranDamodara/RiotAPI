@@ -24,3 +24,18 @@
 .summoners img{
     margin: 3px 3px 3px 3px;
 }
+
+/* ================
+    RESPONSIVE
+================ */
+
+@media screen and (max-width: 576px){
+    .game-card {
+        width: 100%;
+        padding: 2px 2px;
+    }
+    .gamecard-champ-image{
+        height: auto;
+        width: 100px;
+    }
+}

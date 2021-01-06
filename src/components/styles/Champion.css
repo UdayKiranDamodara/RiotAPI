@@ -20,11 +20,16 @@
 }
 
 .name-lore {
-    height: 280px;
+    /* height: 280px; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     text-align: left;
+}
+
+.level-1-image {
+    height: 280px;
+    width: 154px;
 }
 
 /* LEVEL-2 - STATS */
@@ -40,6 +45,7 @@
     text-align: left;
     display: flex;
     justify-content: space-evenly;
+    padding: 0 1em;
 }
 
 li{
@@ -59,6 +65,7 @@ li{
     border: 2px dotted black;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .ability-text {
@@ -67,4 +74,15 @@ li{
 
 .ability-image {
     margin: 10px 10px;
+}
+
+/* ================
+    RESPONSIVE
+================ */
+
+@media screen and (max-width: 576px){
+    .level-1-container{
+        flex-direction: column-reverse;
+    }
+
 }
